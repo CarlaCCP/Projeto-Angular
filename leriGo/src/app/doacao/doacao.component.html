@@ -1,0 +1,192 @@
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 p-3">
+            <app-perfil-lateral></app-perfil-lateral>
+        </div>
+        <div class="col-md-8">
+            <h3 class="d-flex justify-content-center"> O ato de doar</h3>
+            
+            <p class="p-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi a expedita reiciendis natus aspernatur voluptatum ad 
+                itaque vero similique libero officia, officiis maxime, unde tempore error, qui corporis nemo odio. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam alias explicabo, 
+                accusamus accusantium velit debitis culpa eveniet doloribus totam, 
+                quasi repudiandae quibusdam voluptatum magnam non cum atque? Reprehenderit, odio neque.
+            </p>
+
+            <p class="p-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi a expedita reiciendis natus aspernatur voluptatum ad 
+                itaque vero similique libero officia, officiis maxime, unde tempore error, qui corporis nemo odio. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam alias explicabo, 
+                accusamus accusantium velit debitis culpa eveniet doloribus totam, 
+                quasi repudiandae quibusdam voluptatum magnam non cum atque? Reprehenderit, odio neque.
+            </p>
+            <p class="p-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi a expedita reiciendis natus aspernatur voluptatum ad 
+                itaque vero similique libero officia, officiis maxime, unde tempore error, qui corporis nemo odio. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam alias explicabo, 
+                accusamus accusantium velit debitis culpa eveniet doloribus totam, 
+                quasi repudiandae quibusdam voluptatum magnam non cum atque? Reprehenderit, odio neque.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Separador de páginas -->
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-6">ONGS</h1>
+      <p class="lead">Conheça um pouco das ongs parceiras e o trabalho sério que cada uma proporciona</p>
+    </div>
+  </div>
+
+<!-- ONGS TESTE-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 p-3">
+            <!--Cards -->
+            <a href="#">
+                <div class="card p-3 shadow p-3" style="max-width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/desigualdade-social.jpg"
+                        alt="Imagem de capa do card">
+                </div>
+            </a>
+            <!---->
+        </div>
+        <div class="col-md-4 p-3">
+            <!--Cards -->
+            <a href="#">
+                <div class="card p-3 shadow p-3" style="max-width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/desigualdade-social.jpg"
+                        alt="Imagem de capa do card">
+                </div>
+            </a>
+            <!---->
+        </div>
+        <div class="col-md-4 p-3">
+            <!--Cards -->
+            <a href="#">
+                <div class="card p-3 shadow p-3" style="max-width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/desigualdade-social.jpg"
+                        alt="Imagem de capa do card">
+                </div>
+            </a>
+            <!---->
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 p-3">
+            <!--Cards -->
+            <a href="#">
+                <div class="card p-3 shadow p-3" style="max-width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/desigualdade-social.jpg"
+                        alt="Imagem de capa do card">
+                </div>
+            </a>
+            <!---->
+        </div>
+        <div class="col-md-4 p-3">
+            <!--Cards -->
+            <a href="#">
+                <div class="card p-3 shadow p-3" style="max-width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/desigualdade-social.jpg"
+                        alt="Imagem de capa do card">
+                </div>
+            </a>
+            <!---->
+        </div>
+        <div class="col-md-4 p-3">
+            <!--Cards -->
+            <a href="#">
+                <div class="card p-3 shadow p-3" style="max-width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/desigualdade-social.jpg"
+                        alt="Imagem de capa do card">
+                </div>
+            </a>
+            <!---->
+        </div>
+    </div>
+</div>
+<!-- FIM ONGS TESTE-->
+<!-- Momento doação-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center mt-4 mb-4">
+            <h3>Escolha o produto que deseja doar</h3>
+            
+        </div>
+        <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let item of listaProduto">
+
+
+            <div class="card d-flex justify-content-center" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.nome}}</h5>
+                </div>
+
+                <img src={{item.foto}}
+                    class="card-img-top" alt="...">
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item border border-dark">Tamanho - {{item.tamanho}}</li>
+                    <li class="list-group-item border border-dark">Valor - {{item.preco}}</li>
+                    <li class="list-group-item border border-dark">Id - {{item.idProduto}}</li>
+                </ul>
+                <div class="card-body">
+
+                    <button type="button" class="btn btn-outline-info w-100 mt-2" data-toggle="modal"
+                        data-target="#modalDelete" data-whatever="@mdo"
+                        (click)="identificarId(item.idProduto)">Doar peça</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Fim momento doação-->
+<!--Modal ONGs -->
+
+<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                                <div class="modal-dialog">
+                                    <div class="modal-content bg-white text-dark">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Escolha a ONG: de codigo:
+                                                {{idProd}}
+                                            </h5>
+                                            <button type="button" class="close " data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body mt-3">
+                                            <div class="form-group">
+
+                                                <select class="form-control">
+                                                    <option>Select padrão</option>
+                                                    <option>Select padrão</option>
+                                                    <option>Select padrão</option>
+                                                    <option>Select padrão</option>
+                                                    <option>Select padrão</option>
+                                                    <option>Select padrão</option>
+                                                  </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light" data-dismiss="modal" (click)= 'btnDoar()'>Doar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!--FIM MODAL ONGS-->

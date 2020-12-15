@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+
+
+.btn {
+    animation: bg 10s infinite;
+    animation-timing-function: linear
+
+}
+
+@keyframes bg {
+	0% {
+        background-color: white;
+    }
+    25% {
+        background-color: #cae9ff;
+    }
+    50% {
+        background-color: #3680bd;
+    }
+    75% {
+        background-color:#cae9ff;
+	}
+}
+
+.card-img-top {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.card-img-top:hover {
+    -webkit-transform:scale(1.15); /* Safari and Chrome */
+    -moz-transform:scale(1.15); /* Firefox */
+    -ms-transform:scale(1.15); /* IE 9 */
+    -o-transform:scale(1.15); /* Opera */
+     transform:scale(1.15);
+}
+

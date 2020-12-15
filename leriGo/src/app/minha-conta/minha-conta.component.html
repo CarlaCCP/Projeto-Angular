@@ -1,0 +1,349 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+
+        <div class="col-md-4">
+            <app-perfil-lateral></app-perfil-lateral>
+        </div>
+
+
+
+        <div class="col-md-8 fundo d-flex justify-content-center w-100 border border-dark rounded ">
+
+            <div class="row ">
+                <div class="col-md-12 d-flex justify-content-center mt-3 mb-3">
+                    <h1>Inserir Anuncio</h1>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <form>
+                        <div class="form-group ">
+                            <label for="exampleFormControlInput1">Nome do produto</label>
+                            <input type="text" class="form-control" id="nomeProduto" placeholder="Ex: Blusa de frio"
+                                [(ngModel)]="produto.nome" [ngModelOptions]="{standalone: true}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Quantidade</label>
+                            <input type="number" class="form-control" id="nomeProduto" placeholder="Ex: 1"
+                                [(ngModel)]="produto.quantidade" [ngModelOptions]="{standalone: true}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Valor</label>
+                            <input type="number" class="form-control" id="nomeProduto" placeholder="Ex: 100" default="0"
+                                [(ngModel)]="produto.preco" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-start mb-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Doação</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Foto do produto</label>
+                            <img src="https://image.freepik.com/vetores-gratis/multicolor-roupas-peg-fundo-padrao_1224-157.jpg" id="imagem-preview">
+                            <input type="file" class="form-control" id="nomeProduto" [(ngModel)]="produto.foto"
+                                [ngModelOptions]="{standalone: true}" (change)= 'carregarImagemPreview($event)'>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Tamanho do produto</label>
+                            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="produto.tamanho"
+                                [ngModelOptions]="{standalone: true}">
+                                <option>P</option>
+                                <option>M</option>
+                                <option>G</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Tipo de peça</label>
+                            <select class="form-control" id="exampleFormControlSelect1"
+                                [(ngModel)]="categoria.idCategoria" [ngModelOptions]="{standalone: true}">
+                                <option>1</option>
+                                <option>Calçado</option>
+                                <option>Acessorio</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 d-flex justify-content-end">
+                                <div class="form-check">
+
+                                    <label class="form-check-label  mr-4" for="exampleRadios1">
+                                        Masculino
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios2" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Feminino
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-3 d-flex justify-content-center">
+                                <div class="w-50 d-flex justify-content-center">
+                                    <button class="btn btn-outline-success" (click)="publicarAnuncio()" >Enviar
+                                        dados</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 fundo d-flex justify-content-center w-100 border border-dark rounded mt-5"
+            data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center mt-4 mb-4">
+                    <h1>Meus Anuncios</h1>
+                </div>
+                <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let item of listaProduto">
+
+
+                    <div class="card d-flex justify-content-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.nome}}</h5>
+                        </div>
+
+                        <img src={{item.foto}}
+                            class="card-img-top" alt="...">
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border border-dark">Tamanho - {{item.tamanho}}</li>
+                            <li class="list-group-item border border-dark">Valor - {{item.preco}}</li>
+                            <li class="list-group-item border border-dark">Id - {{item.idProduto}}</li>
+                        </ul>
+                        <div class="card-body">
+
+                            <button type="button" class="btn btn-outline-info w-100 mt-2" data-toggle="modal"
+                                data-target="#modalAlterar" data-whatever="@mdo"
+                                (click)="identificarId(item.idProduto)">Alterar Anuncio</button>
+
+                            <button type="button" class="btn btn-outline-danger w-100 mt-2" data-toggle="modal"
+                                data-target="#modalDelete" data-whatever="@mdo"
+                                (click)="identificarId(item.idProduto)">Deletar Anuncio</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+<!--Modal de Alterações-->
+        <div class="modal fade" id="modalAlterar" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" data-aos="zoom-in">
+            <div class="modal-content bg-dark text-white" data-aos="zoom-in">
+                <div class="modal-header" data-aos="zoom-in">
+                    <h5 class="modal-title" id="exampleModalLabel" data-aos="zoom-in">Alteração de Anuncio
+                    </h5>
+                    <button type="button" class="close " data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Nome do produto</label>
+                            <input type="text" class="form-control" id="nomeProduto"
+                                placeholder="Ex: Blusa de frio" [(ngModel)]="produto.nome"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Quantidade</label>
+                            <input type="number" class="form-control" id="nomeProduto"
+                                placeholder="Ex: 1" [(ngModel)]="produto.quantidade"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Valor</label>
+                            <input type="number" class="form-control" id="nomeProduto"
+                                placeholder="Ex: 100" default="0" [(ngModel)]="produto.preco"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-start mb-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox"
+                                    id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label"
+                                    for="inlineCheckbox1">Doação</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Foto do produto</label>
+                            <img src={{produto.foto}} id="imagem-preview">
+                            <input type="file" class="form-control" id="nomeProduto" [(ngModel)]="produto.foto"
+                                [ngModelOptions]="{standalone: true}" (change)= 'carregarImagemPreview($event)'>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Tamanho do produto</label>
+                            <select class="form-control" id="exampleFormControlSelect1"
+                                [(ngModel)]="produto.tamanho"
+                                [ngModelOptions]="{standalone: true}">
+                                <option>P</option>
+                                <option>M</option>
+                                <option>G</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Tipo de peça</label>
+                            <select class="form-control" id="exampleFormControlSelect1"
+                                [(ngModel)]="categoria.idCategoria"
+                                [ngModelOptions]="{standalone: true}">
+                                <option>Vestuario</option>
+                                <option>Calçado</option>
+                                <option>Acessorio</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 d-flex justify-content-end">
+                                <div class="form-check">
+
+                                    <label class="form-check-label  mr-4" for="exampleRadios1">
+                                        Masculino
+                                    </label>
+                                    <input class="form-check-input" type="radio"
+                                        name="exampleRadios" id="exampleRadios1" value="option1"
+                                        checked>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"
+                                        name="exampleRadios" id="exampleRadios2"
+                                        value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Feminino
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-3 d-flex justify-content-center">
+                                <div class="w-50 d-flex justify-content-center">
+                                    <button class="btn btn-outline-success"
+                                        (click)="publicarAnuncio()">
+                                        Atualizar produto
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Desistir da
+                        Alteração</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/modal de alterações-->
+    <!--modal do delete-->
+    <div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                                <div class="modal-dialog">
+                                    <div class="modal-content bg-dark text-white">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Deletar Anuncio? de codigo:
+                                                {{idProd}}
+                                            </h5>
+                                            <button type="button" class="close " data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body mt-3">
+                                            <div class="form-group">
+
+                                                <button class="btn btn-outline-danger w-100" (click)="btnDelete()">
+                                                    Sim eu quero mesmo deletar!
+                                                </button>
+                                                
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light" data-dismiss="modal">Desistir de
+                                                deletar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    <!--/modal do delete-->
+
+
+
+        <div class="col-md-12 fundo d-flex justify-content-center w-100 border border-dark rounded mt-5 teste"
+            id="editarInformacoes">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <h1>Atualizar dados de Perfil</h1>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                    <h3 class="text-center text-primary mb-4 fonte-letras texto"> </h3>
+
+                    <form class="mb-5">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Titulo:</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o seu titulo">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Sua experiencia:</label>
+                            <textarea class="form-control" id="experiencia" rows="3"
+                                placeholder="Digite aqui a sua experiencia" name="texto"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label for="exampleFormControlSelect1">Escolha um tema ou <a> Cadastre um novo </a>
+                                    </label>
+                                    <select class="form-control" id="tema">
+                                        <option>
+
+                                        </option>
+
+                                    </select>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-end align-items-end">
+                                    <button type="button" class="btn btn-outline-primary w-50 h-50">Publicar</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

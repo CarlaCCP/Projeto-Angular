@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-md-12">
+            <h1 class="text-center">Cadastro</h1>
+        </div>
+    </div>
+    <div class="row mb-5 d-flex justify-content-center">
+        <div class="col-md-6">
+            <div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nome</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby='emailHelp'
+                        placeholder="Seu Nomel" [(ngModel)]="user.nome">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">E-mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby='emailHelp'
+                        placeholder="Seu e-mail"  [(ngModel)]="user.email">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1">Senha</label>
+                        <input type="password" class="form-control " id="exampleInputPassword1" placeholder="Senha"  (input)="conferirSenha($event)" value="{{senha}}">
+
+                    </div>
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1">Confirmação de Senha</label>
+                        <input type="password" class="form-control " id="exampleInputPassword1"
+                            placeholder="Confirmação de Senha"  [(ngModel)]="user.senha">
+                    </div>
+                </div>
+                <div>
+                    <p class="text-center mt-2">Já tem uma conta?<a class="atualizacaoHouver" href="/login"> Faça o
+                            login aqui</a></p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-outline-info w-25 mt-3" (click)="cadastrar()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

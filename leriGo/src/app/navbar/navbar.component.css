@@ -1,0 +1,9 @@
+.tm-fonte{
+    font-size: 12px;
+}
+
+.backgroundNavbar{
+    background-image: url(/assets/img/wave.svg);
+    background-repeat: repeat-x;
+    width: 100%;
+}
