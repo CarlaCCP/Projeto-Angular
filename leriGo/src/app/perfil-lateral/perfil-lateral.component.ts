@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../model/usuario';
-import { AuthService } from '../service/auth.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-perfil-lateral',
@@ -8,9 +7,10 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./perfil-lateral.component.css']
 })
 export class PerfilLateralComponent implements OnInit {
-  user: Usuario = new Usuario()
- 
-  constructor(private authService: AuthService) { }
+
+  env = environment
+  
+  constructor() { }
 
   ngOnInit(): void {
   }

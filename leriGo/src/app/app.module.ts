@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,6 +15,14 @@ import { FormsModule } from '@angular/forms';
 import { PerfilLateralComponent } from './perfil-lateral/perfil-lateral.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import { DoacaoComponent } from './doacao/doacao.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GetNomeComponent } from './get-nome/get-nome.component';
+import { GetTipoComponent } from './get-tipo/get-tipo.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProdutoComponent } from './produto/produto.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -28,14 +35,22 @@ import { DoacaoComponent } from './doacao/doacao.component';
     CadastroComponent,
     PerfilLateralComponent,
     MinhaContaComponent,
-    DoacaoComponent
+    DoacaoComponent,
+    GetNomeComponent,
+    GetTipoComponent,
+    ProdutoComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CarouselModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule,
+    AppRoutingModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

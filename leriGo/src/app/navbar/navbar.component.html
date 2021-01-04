@@ -1,50 +1,43 @@
 <!-- Image and text -->
 <div class="container-flex w-100 mb-2 backgroundNavbar">
 
-  <nav class="navbar navbar-light " >
+  <nav class="navbar navbar-light ">
     <a class="navbar-brand" routerLink="/home">
-      <img src="assets/img/logoLeriGO.png" width="120" height="120" class="d-inline-block align-top"
-        alt="" loading="lazy">
+      <img src="assets/img/logoLeriGO.png" width="120" height="120" class="d-inline-block align-top" alt=""
+        loading="lazy">
     </a>
 
-    <div class="d-flex justify-content-end" >
-      <button class="btn btn-primary" *ngIf='auth.btnSair()'>
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tags" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
-          <path fill-rule="evenodd" d="M5.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-          <path d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
-        </svg>
-        <p class="tm-fonte">Anunciar</p>
-      </button>
+    <div class="d-flex justify-content-end">
 
       
-
-      
-
-      <div class="pl-4  d-flex align-items-center">
-        <button class="btn btn-outline-primary" (click)='verificarLogin()'>
+        <button class="btn btn-outline-primary ml-1" type="button" routerLink="/minhaConta" (click)="verificarLogin()">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
-          <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-          <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
-        </svg>
-          <p class="tm-fonte">&nbsp;{{nome()}}&nbsp;</p>
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                  <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                </svg>
+                <p class="tm-fonte">&nbsp;{{nome()}}&nbsp;</p>
         </button>
-      </div>
-
-      <div class="pl-4  d-flex align-items-center" *ngIf='auth.btnSair()'>
-        <button class="btn btn-outline-primary">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-
-          </svg>
-          <p class="tm-fonte">Carrinho</p>
+          <button class="btn btn-outline-primary w-100 h-100 ml-1" routerLink="/carrinho" *ngIf='auth.btnSair()'>
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-fill " fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+      
+                </svg>
+                <p class="tm-fonte d-flex justify-content-start">Carrinho</p>
         </button>
-      </div>
+          <button class="btn btn-outline-primary w-100 h-100 ml-1" routerLink="/login" (click)='sair()' *ngIf='auth.btnSair()'>
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-x-circle"
+                  viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path fill-rule="evenodd"
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+                <p class="tm-fonte">Sair</p>
+        </button>
 
     </div>
 
@@ -53,8 +46,9 @@
 
   <div class="d-flex justify-content-center">
     <form class="form-inline my-2 my-lg-0 p-3 w-100 d-flex justify-content-center">
-      <input class="form-control mr-sm-2 w-50" type="search" placeholder="Pesquisar" aria-label="Search">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">
+      <input class="form-control mr-sm-2 w-50" type="search" placeholder="Pesquisar" aria-label="Search"
+        [(ngModel)]='nomeProduto' [ngModelOptions]="{standalone: true}">
+      <button class="btn btn-primary my-2 my-sm-0" type="button" [routerLink]="['/get-nome', nomeProduto]">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"

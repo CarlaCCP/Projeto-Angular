@@ -1,3 +1,4 @@
+import { Carrinho } from './carrinho'
 import { Categoria } from './categoria'
 
 export class Produto{
@@ -9,4 +10,5 @@ export class Produto{
     public preco!: number
     public foto!: string 
     public categoria!: Categoria
+    public carrinho!: Carrinho
 }

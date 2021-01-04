@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center mt-4 mb-4">
+                        <h1>Resultados da Pesquisa</h1>
+                    </div>
+                    <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let item of listaProduto">
+                        <div class="card d-flex justify-content-center" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.nome}}</h5>
+                            </div>
+                            <img src={{item.foto}}
+                                class = "card-img-top" alt="...">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border border-dark">Tamanho - {{item.tamanho}}</li>
+                                <li class="list-group-item border border-dark">Valor - {{item.preco}}</li>
+                                <li class="list-group-item border border-dark">Id - {{item.idProduto}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>

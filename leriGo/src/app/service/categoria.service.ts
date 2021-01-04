@@ -24,11 +24,14 @@ export class CategoriaService {
   }
 
   postCategoria(categoria: Categoria) : Observable<Categoria>{
-    return this.http.post<Categoria>('http://localhost:8080/categoria', categoria, this.token)
+    return this.http.post<Categoria>('htttp://localhost:8080/categoria', categoria, this.token)
   }
 
   putCategoria(categoria: Categoria) : Observable<Categoria>{
     return this.http.put<Categoria>('http://localhost:8080/categoria', categoria, this.token)
   }
-}
 
+  getByTipoCategoria(tipo: string): Observable<Categoria[]> {
+    return this.http.get<Categoria[]>(`http://localhost:8080/categoria/tipo.${tipo}`, this.token)
+  }
+}

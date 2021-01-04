@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -12,6 +13,8 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class DoacaoComponent implements OnInit {
 
+  
+  public paginaAtual = 1;
   idProd!: number
   idCate!: number
   produto: Produto = new Produto()
@@ -23,7 +26,8 @@ export class DoacaoComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -55,13 +59,13 @@ export class DoacaoComponent implements OnInit {
     this.categoria.idCategoria= this.idCate
 
     if(this.produto.nome == null || this.produto.quantidade < 1 || this.produto.preco == null || this.produto.foto == null){
-      alert('Preencha todos os campos antes de publicar')
+      this.alert.showAlertDanger('Preencha todos os campos antes de publicar')
     } else{
 
       this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=> {
         this.produto = resp
         this.produto = new Produto()
-        alert('Produto anunciado com sucesso!')
+        this.alert.showAlertSuccess('Produto anunciado com sucesso!')
         this.findAllProdutos()
       })
     }
@@ -70,14 +74,14 @@ export class DoacaoComponent implements OnInit {
   btnDelete(){
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       this.router.navigate(['/minhaConta'])
-      alert('Produto excluido com sucesso!')
+      this.alert.showAlertInfo('Produto excluido com sucesso!')
     })
   }
 
   btnDoar(){
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       this.router.navigate(['/doacao'])
-      alert('Produto doado com sucesso, dentro de alguns dias você receberá a confirmação da entrega por email')
+      this.alert.showAlertSuccess('Produto doado com sucesso, dentro de alguns dias você receberá a confirmação da entrega por email')
     })
   }
   identificarId(id: number){
@@ -92,11 +96,12 @@ export class DoacaoComponent implements OnInit {
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto = resp
     this.router.navigate(['/minhaConta'])
-    alert('Postagem alterada com sucesso')
+    this.alert.showAlertInfo('Postagem alterada com sucesso')
     }, err =>{
       if(err.status == '500'){
-        alert('Preencha todos os campos corretamente antes de enviar')
+        this.alert.showAlertDanger('Preencha todos os campos corretamente antes de enviar')
       }
     })
   }
+
 }

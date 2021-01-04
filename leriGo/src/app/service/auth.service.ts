@@ -33,7 +33,6 @@ export class AuthService {
     let token = localStorage.getItem('token')
     
     if (token == null){
-      let token = localStorage.getItem('token')
       
       ok = true
     }
