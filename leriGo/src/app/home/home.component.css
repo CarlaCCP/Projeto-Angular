@@ -150,14 +150,14 @@ a{
 	color:rgba(26,26,26,0.5);
 }
 .price{
-	color: #333333;
-	font-weight: 600;
-	font-size: 1.1rem;
-	letter-spacing: 0.5px;
+	color: #333333!important;
+	font-weight: 600!important;
+	font-size: 1.1rem!important;
+	letter-spacing: 0.5px!important;
 }
 .overlay{
 	position: absolute;
-	left: 50%;
+	left: 50%; 
 	top: 50%;
 	transform: translate(-50%,-50%);
 	width:100%;

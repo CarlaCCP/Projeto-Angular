@@ -1,55 +1,54 @@
 <div class="container">
-  <div class="product-image">
-    <img src={{produto.foto}} alt="" class="product-pic" id="foto">
-  </div>
-
-  <div class="product-details">
-    <header>
-      <h1 class="title" id="nome">{{produto.nome}}</h1>
-      <span class="colorCat" id="quantidade">Estoque:
-        {{produto.quantidade}}</span>
-      <div class="price">
-        <span class="before" >De {{valorAntigo}}</span>
-        <span class="current">Por R$ {{produto.preco}}</span>
-      </div>
-      <div class="rate">
-        <a class="active">★</a>
-        <a class="active">★</a>
-        <a class="active">★</a>
-        <a class="active">★</a>
-        <a>★</a>
-      </div>
-    </header>
-    <div class="controls">
-      <div class="color">
-
-      </div>
-      <div>
-        <h3>Qtd.{{produto.quantidade}}</h3>
-      </div>
-
-      <div>
-        <h3>{{produto.tamanho}}</h3>
-
-      </div>
+    <div class="product-image">
+      <img src={{produto.foto}} alt="" class="product-pic" id="foto">
     </div>
-    <div class="footer">
-      <button type="button" (click)="adicionaCarrinho(produto.idProduto)">
-        <span>Adicione ao carrinho</span>
-      </button>
 
-      <a href="https://mpago.la/31UqYCn" target="_blank">
-        <button style="
+    <div class="product-details">
+      <header>
+        <h1 class="title" id="nome">{{produto.nome}}</h1>
+        <span class="colorCat" id="quantidade">Estoque:
+          {{produto.quantidade}}</span>
+        <div class="price">
+          <span class="before">De {{valorAntigo}}</span>
+          <span class="current">Por R$ {{produto.preco}}</span>
+        </div>
+        <div class="rate">
+          <a class="active">★</a>
+          <a class="active">★</a>
+          <a class="active">★</a>
+          <a class="active">★</a>
+          <a>★</a>
+        </div>
+      </header>
+      <div class="controls">
+        <div class="color">
+
+        </div>
+        <div>
+          <h3>Qtd.{{produto.quantidade}}</h3>
+        </div>
+
+        <div>
+          <h3>{{produto.tamanho}}</h3>
+
+        </div>
+      </div>
+      <div class="footer">
+        <button type="button" (click)="adicionandoCarrinho()">
+          <span>Adicione ao carrinho</span>
+        </button>
+
+        <a href="https://mpago.la/31UqYCn" target="_blank">
+          <button style="
         display: flex;
         border: 0;
         align-items: center;
         cursor: pointer;
         background: linear-gradient(to bottom, #7db9e6 0%, #4389bf 100%);
         transition: 200ms;">
-          <span>Comprar agora</span>
-        </button>
-      </a>
+            <span>Comprar agora</span>
+          </button>
+        </a>
+      </div>
     </div>
-  </div>
-
 </div>

@@ -1,40 +1,39 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Carrinho } from '../model/carrinho';
+
+import { Produto } from '../model/produto';
+import { ProdutoService } from './produto.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarrinhoService {
 
-  constructor(private http: HttpClient) { 
-    
+  
+
+  constructor(private http: HttpClient,
+    private produtoService: ProdutoService,
+    private router: Router
+    ) { 
   }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token')!)
+  itens = [];
+
+
+
+  adicionandoCarrinho(){
+    this.itens.push()
+    this.router.navigate(['/carrinho'])
   }
 
-  getAllItens() : Observable<Carrinho[]>{
-    return this.http.get<Carrinho[]>('http://localhost:8080/carrinho', this.token)
+  pegarItens(){
+    return this.itens;
   }
 
-  getByIdItens(idCarrinho: number) : Observable<Carrinho>{
-    return this.http.get<Carrinho>(`http://localhost:8080/carrinho/${idCarrinho}`, this.token)
+  limparCarrinho(){
+    this.itens = [];
+    return this.itens;
   }
-
-
-  postItens(carrinho: Carrinho) : Observable<Carrinho>{
-    return this.http.post<Carrinho>('http://localhost:8080/carrinho', carrinho, this.token)
-  }
-
-  putCategoria(carrinho: Carrinho) : Observable<Carrinho>{
-    return this.http.put<Carrinho>('http://localhost:8080/carrinho', carrinho, this.token)
-  }
-
-deleteItens() : Observable<Carrinho[]>{
-  return this.http.delete<Carrinho[]>('http://localhost:8080/carrinho', this.token)
-}
-
 }

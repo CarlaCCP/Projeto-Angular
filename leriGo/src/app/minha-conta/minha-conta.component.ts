@@ -95,7 +95,7 @@ export class MinhaContaComponent implements OnInit {
             this.produto = resp
             this.produto = new Produto()
             this.alert.showAlertSuccess('Produto anunciado com sucesso!')
-            window.location.reload()
+            
             this.findAllProdutos()
           })
         })
@@ -104,7 +104,7 @@ export class MinhaContaComponent implements OnInit {
           this.produto = resp
           this.produto = new Produto()
           this.alert.showAlertSuccess('Produto anunciado com sucesso!')
-          window.location.reload()
+        
           this.findAllProdutos()
         })
       }
@@ -132,7 +132,6 @@ export class MinhaContaComponent implements OnInit {
     this.produto = resp
     this.router.navigate(['/minhaConta'])
     this.alert.showAlertInfo('Postagem alterada com sucesso')
-    window.location.reload()
     }, err =>{
       if(err.status == '500'){
         this.alert.showAlertDanger('Preencha todos os campos corretamente antes de enviar')

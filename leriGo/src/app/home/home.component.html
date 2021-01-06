@@ -62,8 +62,11 @@
 
   </div>
 
-  
+  <div class="col-md-12 d-flex justify-content-center">
+    <h1 class="mb-10 p-4">Produtos em Destaque</h1>
 
+  </div>
+  
   <div class="row">
 
     <div class="col-md-12  mt-5 my-5">
@@ -79,7 +82,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="#" class="buy-btn">Compre Agora</a>
+                  <a href="#" class="buy-btn">Ver +</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -87,10 +90,14 @@
                 <!--type-------->
                 <div class="type">
                   <a href="#">Blusa Preta</a>
+                  <div>
                   <span>Quantidade:1</span>
+                  <br>
+                  <a href="#" class="price">R$59,99</a>
+                </div>
                 </div>
                 <!--price-------->
-                <a href="#" class="price">R$59,99</a>
+                
 
               </div>
             </div>
@@ -98,7 +105,7 @@
         </ng-template>
         <ng-template carouselSlide>
           <div class="col-md-4">
-            <div class="box" style="width: 12.5rem;">
+            <div class="box mb-3" style="width: 12.5rem;">
               <div class="box-body">
                 <h5 class="card-title"></h5>
               </div>
@@ -107,7 +114,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="#" class="buy-btn">Compre Agora</a>
+                  <a href="#" class="buy-btn">Ver +</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -115,10 +122,17 @@
                 <!--type-------->
                 <div class="type">
                   <a href="#">Jaqueta Preta</a>
-                  <span>Quantidade: 1</span>
+                  <div>
+                    <span>Quantidade: 1</span>
+                    <br>
+                    <a href="#" class="price">R$99,99</a>
+                  </div>
+                  
                 </div>
                 <!--price-------->
-                <a href="#" class="price">R$99,99</a>
+                
+                
+                
 
               </div>
             </div>
@@ -135,7 +149,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="#" class="buy-btn">Compre Agora</a>
+                  <a href="#" class="buy-btn">Ver +</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -143,10 +157,16 @@
                 <!--type-------->
                 <div class="type">
                   <a href="#">Relogio</a>
-                  <span>Quantidade:1</span>
+
+                  <div>
+                    <span>Quantidade:1</span>
+                    <br>
+                    <a href="#" class="price">R$199,99</a>
+                  </div>
+                  
                 </div>
                 <!--price-------->
-                <a href="#" class="price">R$199,99</a>
+                
 
               </div>
             </div>
@@ -163,7 +183,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="#" class="buy-btn">Compre Agora</a>
+                  <a href="#" class="buy-btn">Ver +</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -171,10 +191,15 @@
                 <!--type-------->
                 <div class="type">
                   <a href="#">Tenis Nike</a>
-                  <span>Quantidade:1</span>
+                  <div>
+                    <span>Quantidade:1</span>
+                    <br>
+                    <a href="#" class="price">R$99,99</a>
+                  </div>
+                  
                 </div>
                 <!--price-------->
-                <a href="#" class="price">R$99,99</a>
+                
 
               </div>
             </div>
@@ -185,9 +210,17 @@
     </div>
   </div>
 
+  <div class="col-md-12 d-flex justify-content-center">
+    <h1 class="mb-10 p-4"> Outros Produtos</h1>
+
+  </div>
+
+
   <div class="row" >
-    <div class="col-md-12 d-flex justify-content-center fonte" >
-      <h1 class="fonte" >Produtos</h1>
+    <div class="col-md-12 d-flex justify-content-center">
+      <br>
+      <br>
+
     </div>
     <div class="col-md-3 mb-5"
       *ngFor="let item of listaProduto | paginate: { itemsPerPage: 8, currentPage: paginaAtual }; let i = index">

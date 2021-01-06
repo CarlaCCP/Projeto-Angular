@@ -9,7 +9,7 @@
                                 <div class="col-md-12 d-flex justify-content-center mt-4 mb-4">
                                   
                                 </div>
-                                <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let item of listaItens">
+                                <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let item of itens">
                                     <div class="card d-flex justify-content-center" style="width: 18rem;">
                                         <div class="card-body">
                                             <h5 class="card-title">{{item.nome}}</h5>
@@ -19,6 +19,8 @@
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item border border-dark">Valor - {{item.preco}}</li>
                                             <li class="list-group-item border border-dark">Id - {{item.idProduto}}</li>
+                                            <li class="list-group-item border border-dark">Quantidade - {{item.quantidade}}</li>
+                                            <li class="list-group-item border border-dark">Tamanho - {{item.tamanho}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -68,7 +70,7 @@
                     <h4>Total da compra: {{total}}</h4>
                 </div>
         <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary d-flex justify-content-center w-50">Confirmar compra</button>
+        <button type="submit" class="btn btn-primary d-flex justify-content-center w-50 mb-4 mt-4">Confirmar compra</button>
         </div>
     </form>
 

@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'carrinho',component: CarrinhoComponent},
   {path: 'get-nome/:nome', component: GetNomeComponent},
   {path: 'get-tipo', component: GetTipoComponent},
-  {path: 'carrinho/:idProduto',component: CarrinhoComponent},
+  {path: 'carrinho',component: CarrinhoComponent},
   {path: 'doacao',component: DoacaoComponent},
   {path: 'produto/:idProduto',component: ProdutoComponent}
 

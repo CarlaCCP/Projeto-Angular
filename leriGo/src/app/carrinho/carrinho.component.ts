@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { Carrinho } from '../model/carrinho';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
 import { CarrinhoService } from '../service/carrinho.service';
@@ -25,27 +24,29 @@ export class CarrinhoComponent implements OnInit {
   listaCategoria!: Categoria[]
   idProd!: number
 
-  carrinho: Carrinho = new Carrinho()
-  listaItens!: Carrinho[]
+ 
 
-  
-  total: number = 100
+  itens!: Produto[]
+  total: string = " R$ 0,00"
   
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private carrinhoService: CarrinhoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    
     
   ) { }
 
   ngOnInit() {
-    let idProd = this.route.snapshot.params["idProduto"]
+   /* let idProd = this.route.snapshot.params["idProduto"]
 
     this.identificarId(idProd)
     this.findAllProdutos()
-    this.findByIdProdutos()
+    this.findByIdProdutos()*/
+    this.itens = this.carrinhoService.pegarItens()
+    window.scroll(0,0)
   }
 
   identificarId(id: number){
@@ -54,21 +55,6 @@ export class CarrinhoComponent implements OnInit {
       this.produto = resp
       })
   }
-
-  /*adicionaCarrinho(id:number){
-    this.produtoService.getByIdProduto(id).subscribe((resp: Produto) =>{
-     this.produto = resp
-      this.itens.push(id)
-    })
-  }
-  
-  mostraItens(){
-    for(var index in this.itens)
-{ 
-    this.itens[index]  
-}
-  }
-*/
 
   findAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
